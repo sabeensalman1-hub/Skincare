@@ -1,0 +1,156 @@
+<title>Supplier Sample Request</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: single readable column, sticky listen bar on top, the email as one sheet */
+:root{
+  --bg:#f5f7f6; --sheet:#ffffff; --fg:#1d2624; --muted:#5d6b67; --line:#dbe3e0;
+  --accent:#2f7a68; --accent-fg:#ffffff; --hl:#d7efe7;
+  --display:"Space Grotesk",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121816; --sheet:#1a2220; --fg:#e6eeeb; --muted:#9aaaa5; --line:#2c3835;
+  --accent:#5cc0a6; --accent-fg:#0d1513; --hl:#24443b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121816; --sheet:#1a2220; --fg:#e6eeeb; --muted:#9aaaa5; --line:#2c3835;
+  --accent:#5cc0a6; --accent-fg:#0d1513; --hl:#24443b; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:720px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:16px}
+h1{font-family:var(--display);font-size:1.6rem;line-height:1.2;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:0}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-bottom:1px solid var(--line)}
+button,select{font:inherit;font-size:.95rem;border-radius:10px;border:1px solid var(--line);background:var(--sheet);color:var(--fg);padding:10px 14px;cursor:pointer}
+button.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent);font-weight:600}
+button:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.status{color:var(--muted);font-size:.9rem;flex-basis:100%}
+.sheet{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}
+.sheet h2{font-family:var(--display);font-size:1.05rem;margin:18px 0 6px}
+.sheet p,.sheet li{margin:0 0 8px}
+.sheet ol,.sheet ul{padding-left:22px;margin:0 0 8px}
+.label{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.subject{font-weight:600}
+[data-say].speaking{background:var(--hl);border-radius:6px}
+.ph{color:var(--accent);font-weight:500}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+  <div>
+    <h1>Supplier sample request</h1>
+    <p class="sub">Tap <b>Listen</b> to hear the email read aloud. Each line is highlighted as it's read.</p>
+  </div>
+
+  <div class="bar">
+    <button id="play" class="primary" type="button">▶ Listen</button>
+    <button id="pause" type="button">Pause</button>
+    <button id="stop" type="button">Stop</button>
+    <select id="rate" aria-label="Reading speed">
+      <option value="0.8">Slow</option>
+      <option value="1" selected>Normal</option>
+      <option value="1.2">Fast</option>
+    </select>
+    <button id="copy" type="button">Copy email</button>
+    <span class="status" id="status" role="status"></span>
+  </div>
+
+  <article class="sheet" id="email">
+    <div class="label">Subject</div>
+    <p class="subject" data-say>OEM/ODM Sample Request – Bio-Active Women's Skincare Line for Pakistan (Halal) – <span class="ph">[Your Brand Name]</span></p>
+
+    <p data-say>Dear <span class="ph">[Supplier Name]</span> Team,</p>
+    <p data-say>My name is <span class="ph">[Your Name]</span>, founder of <span class="ph">[Your Brand Name]</span>, a new women's skincare brand launching in Pakistan. We are developing a bio-active K-beauty line and would like to request formulation samples from your R&amp;D team.</p>
+    <p data-say><b>About our market:</b> Pakistan has a hot, humid climate, and many consumers have oily or combination skin. Demand is highest for sunscreen, brightening and pigmentation treatments, cleansers and acne care. All formulas must therefore be lightweight, non-greasy and sweat-resistant, and must stay stable at high temperatures (up to 45°C in storage).</p>
+
+    <h2 data-say>Requirements for all products</h2>
+    <ul>
+      <li data-say>Halal-certified formulas and raw materials.</li>
+      <li data-say>All exosomes and PDRN plant-derived; growth factors recombinant (sh-Oligopeptide) only.</li>
+      <li data-say>Fragrance-free or very lightly fragranced; no essential oils.</li>
+      <li data-say>Strictly no hydroquinone, mercury, corticosteroids or parabens.</li>
+    </ul>
+
+    <h2 data-say>Phase 1: samples requested now</h2>
+    <ol>
+      <li data-say><b>SPF 50+ PA++++ Daily Sun Fluid:</b> lightweight, oil-control / matte finish, no white cast, water- and sweat-resistant. Rice extract, Lactobacillus ferment lysate, Hyaluronic Acid, Centella, Niacinamide 2%. Please propose a filter system with ISO 24444 / 24442 testing. A tinted variant would also be welcome.</li>
+      <li data-say><b>Brightening &amp; Dark-Spot Serum:</b> Niacinamide 5%, Tranexamic Acid 3%, Alpha Arbutin 2%, Phyto-PDRN, Acetyl Hexapeptide-8. Optional: a stable vitamin C derivative (e.g. 3-O-Ethyl Ascorbic Acid).</li>
+      <li data-say><b>Low-pH Cica Gel-to-Foam Cleanser</b> (pH 5.0–5.5): Centella Asiatica, Heartleaf extract, amino-acid surfactants, glycerin. Plus a second variant with 0.5–2% Salicylic Acid for oily and acne-prone skin.</li>
+      <li data-say><b>Lightweight Barrier Gel-Cream:</b> Ceramide NP, Phyto-PDRN, Copper Tripeptide-1, Hyaluronic Acid, plant Squalane, Panthenol. Gel-cream texture suitable for humid weather.</li>
+      <li data-say><b>Exfoliating Toner Pads:</b> PHA (gluconolactone), Salicylic Acid or LHA, Heartleaf extract, Panthenol. Pre-soaked pads in a jar.</li>
+    </ol>
+
+    <h2 data-say>Phase 2: please quote only; samples later</h2>
+    <ul>
+      <li data-say>EGF &amp; Multi-Peptide Serum (recombinant EGF/FGF, multi-peptides, PDRN).</li>
+      <li data-say>Bio-Cellulose PDRN Sheet Mask (PDRN, halal marine or vegan collagen, stabilised Glutathione).</li>
+      <li data-say>Phyto-PDRN &amp; Peptide Eye Cream (15 ml airless tube with ceramic tip; vegan; ophthalmologist-tested).</li>
+      <li data-say>Glutathione &amp; Niacinamide Glow Mist (bag-on-valve recommended).</li>
+      <li data-say>Leave-In Microbubble Mask (please advise on feasibility).</li>
+    </ul>
+
+    <h2 data-say>We would appreciate the following</h2>
+    <ol>
+      <li data-say>Samples for the Phase 1 products, ideally <span class="ph">[2]</span> texture or price variations each.</li>
+      <li data-say>Sample cost and delivery time to Pakistan.</li>
+      <li data-say>MOQ and unit price at <span class="ph">[3,000 / 5,000 / 10,000]</span> units per SKU.</li>
+      <li data-say>Cost-effective alternatives where PDRN, exosomes or growth factors significantly raise the unit cost. Our target retail price is around <span class="ph">[PKR ____]</span> per product.</li>
+      <li data-say>Production lead time.</li>
+      <li data-say>Full INCI lists, COA, MSDS, stability (including high-temperature), PET and HRIPT reports, and SPF test reports.</li>
+      <li data-say>Halal (and, where applicable, vegan) certificates.</li>
+      <li data-say>Packaging options: airless pumps, tubes, pad jars, UV-protective bottles.</li>
+    </ol>
+
+    <p data-say>Thank you for your time. We look forward to your proposal.</p>
+    <p data-say>Kind regards,<br><span class="ph">[Your Name]</span><br><span class="ph">[Title]</span>, <span class="ph">[Your Brand Name]</span><br><span class="ph">[Phone / WhatsApp]</span> | <span class="ph">[Email]</span> | <span class="ph">[Website / Instagram]</span></p>
+  </article>
+</div>
+
+<script>
+(function(){
+  var parts = Array.prototype.slice.call(document.querySelectorAll('[data-say]'));
+  var status = document.getElementById('status');
+  var synth = window.speechSynthesis;
+  var idx = 0, playing = false;
+
+  function spoken(el){
+    return el.innerText
+      .replace(/\[([^\]]+)\]/g, '$1')
+      .replace(/OEM\/ODM/g,'O E M, O D M')
+      .replace(/R&D/g,'R and D')
+      .replace(/SPF/g,'S P F').replace(/PA\+\+\+\+/g,'P A four plus')
+      .replace(/PDRN/g,'P D R N').replace(/EGF\/FGF/g,'E G F and F G F').replace(/EGF/g,'E G F')
+      .replace(/INCI/g,'inky').replace(/COA/g,'C O A').replace(/MSDS/g,'M S D S')
+      .replace(/HRIPT/g,'H R I P T').replace(/PET/g,'P E T').replace(/PHA/g,'P H A').replace(/LHA/g,'L H A')
+      .replace(/MOQ/g,'M O Q').replace(/SKU/g,'S K U').replace(/PKR/g,'rupees').replace(/____/g,'blank')
+      .replace(/\s*\/\s*/g,' or ').replace(/–/g,' to ').replace(/\+/g,' plus ');
+  }
+  function clear(){ parts.forEach(function(p){p.classList.remove('speaking');}); }
+  function say(){
+    if(!playing) return;
+    if(idx >= parts.length){ playing=false; clear(); idx=0; status.textContent='Finished.'; return; }
+    var el = parts[idx];
+    clear(); el.classList.add('speaking');
+    try{ el.scrollIntoView({block:'center',behavior:'smooth'}); }catch(e){}
+    var u = new SpeechSynthesisUtterance(spoken(el));
+    u.rate = parseFloat(document.getElementById('rate').value);
+    u.lang = 'en-GB';
+    u.onend = function(){ idx++; say(); };
+    u.onerror = function(){ idx++; say(); };
+    synth.speak(u);
+  }
+  document.getElementById('play').onclick = function(){
+    if(!synth){ status.textContent='Your browser can’t read aloud here. Use your phone’s “Speak screen” or “Select to speak” accessibility feature instead.'; return; }
+    if(synth.paused){ synth.resume(); status.textContent='Reading…'; return; }
+    if(playing) return;
+    playing = true; status.textContent='Reading…'; say();
+  };
+  document.getElementById('pause').onclick = function(){ if(synth && playing){ synth.pause(); status.textContent='Paused. Tap Listen to continue.'; } };
+  document.getElementById('stop').onclick = function(){ if(!synth) return; playing=false; synth.cancel(); clear(); idx=0; status.textContent='Stopped.'; };
+  document.getElementById('copy').onclick = function(){
+    var text = document.getElementById('email').innerText;
+    var done = function(){ status.textContent='Email copied.'; };
+    var fallback = function(){ var r=document.createRange(); r.selectNodeContents(document.getElementById('email')); var s=getSelection(); s.removeAllRanges(); s.addRange(r); status.textContent='Text selected. Copy it with your device’s copy option.'; };
+    try{ navigator.clipboard.writeText(text).then(done, fallback); }catch(e){ fallback(); }
+  };
+})();
+</script>
